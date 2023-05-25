@@ -22,9 +22,6 @@ function App() {
     >
       <SearchInput />
       <Globe
-        sx={{
-          marginTop: '10px',
-        }}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
         lineHoverPrecision={0}
