@@ -13,6 +13,17 @@ function App() {
     setCountries(MapData);
   }, []);
 
+  const LabelData = (CountryName, CountryAbrv, CountryPop) => {
+    return `
+        <div style="background-color:rgba(0, 0, 0, 0.8); border-radius:10px; text-align:center;">
+          <div style="padding:15px;">
+            ${CountryName}(${CountryAbrv}): <br/>
+            Population: ${CountryPop} <br/>
+          <div/>
+        <div/>
+      `;
+  };
+
   return (
     <Box
       sx={{
@@ -30,16 +41,9 @@ function App() {
         polygonCapColor={(d) => (d === hoverD ? '#ff7900' : '#ffffff')}
         polygonSideColor={() => 'rgba(0, 0, 150, 0.35)'}
         polygonStrokeColor={() => '#000'}
-        polygonLabel={({ properties: d }) => `
-        <div style="background-color:rgba(0, 0, 0, 0.8); border-radius:10px; text-align:center;">
-        <div style="padding:15px;">
-          <b>${d.ADMIN} (${d.ADM0_A3}):</b><br/>
-          Population: <i>${d.POP_EST}</i></b><br/>
-          Skills: <i>${d.SKILLS}</i>
-          <div/>
-        <div/>
-      
-      `}
+        polygonLabel={({ properties: d }) =>
+          LabelData(d.ADMIN, d.ADM0_A3, d.POP_EST)
+        }
         onPolygonHover={setHoverD}
         polygonsTransitionDuration={100}
       />
