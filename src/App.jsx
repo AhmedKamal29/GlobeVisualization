@@ -5,7 +5,7 @@ import SearchInput from './componants/SearchInput';
 import Globe from 'react-globe.gl';
 
 function App() {
-  const [countries, setCountries] = useState({});
+  const [countries, setCountries] = useState([]);
   const [hoverD, setHoverD] = useState();
 
   useEffect(() => {
