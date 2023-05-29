@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import MapData from './dataset/Map.json';
 import { Box } from '@mui/material';
-import SearchInput from './componants/SearchInput';
+import SearchInput from './componants/SearchBar/SearchInput';
 import Globe from 'react-globe.gl';
 
 function App() {
